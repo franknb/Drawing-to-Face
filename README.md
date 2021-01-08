@@ -4,9 +4,9 @@
 
 ### Before we start:
 
-### If you are just looking for a quick test-drawing with the application, make sure to check out http://www.geometrylearning.com/DeepFaceDrawing/, where the original author created a web-based testing interface (http://deepfacedrawing.geometrylearning.com/index_EN_621.html).
+#### If you are just looking for a quick test-drawing with the application, make sure to check out http://www.geometrylearning.com/DeepFaceDrawing/, where the original author created a web-based testing interface (http://deepfacedrawing.geometrylearning.com/index_EN_621.html).
 
-### For the model specifics, please refer to the original paper: http://www.geometrylearning.com/paper/DeepFaceDrawing.pdf
+#### For the model specifics, please refer to the original paper: http://www.geometrylearning.com/paper/DeepFaceDrawing.pdf
 
 ![teaser image from original repo](showcase/teaser.jpg)
 
