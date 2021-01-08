@@ -12,6 +12,6 @@
 
 ![actual image 1](showcase/actualcase1.png)
 
-![actual image 2](showcase/actualcase2.png)
+![actual image 2](showcase/actualcase2.jpg)
 
 
