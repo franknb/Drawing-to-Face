@@ -83,7 +83,9 @@ Open up a new terminal/CMD on your own operating system,
 docker cp ubuntu_env:/DeepFaceDrawing-Jittor/ori0.jpg ./          
 ```
 
-Then you can simply go to that current directory where you run your terminal/CMD, and find the pasted image. Open it just as any other pictures you have.
+Then you can simply go to that current directory where you run your terminal/CMD, and find the pasted image. Open it just as any other pictures you have, here's the pretty face you should see.
+
+![ori0](showcase/ori0.jpg)
 
 ### 6. Next steps
 
