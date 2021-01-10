@@ -6,6 +6,8 @@
 
 *(Teaser image from original [REPO](https://github.com/IGLICT/DeepFaceDrawing-Jittor/))*
 
+------
+
 ### Before we start:
 
 #### This REPO mainly helps with creating the working environment easily using docker. If you are just looking for a quick test-drawing with the application, make sure to check out http://www.geometrylearning.com/DeepFaceDrawing/, where the original author created a web-based [testing interface](http://deepfacedrawing.geometrylearning.com/index_EN_621.html/).
