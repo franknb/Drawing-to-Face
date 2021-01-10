@@ -87,6 +87,8 @@ Then you can simply go to that current directory where you run your terminal/CMD
 
 ![ori0](showcase/ori0.jpg)
 
+*(ori0.jpg)*
+
 ### 6. Next steps
 
 Now you know the model could run on your own environment, it's time to draw and run more tests. We will just use the test_model.py for this part, unless you want to rewrite it yourself if you have a fairly fundamental Python background. The test_model.py will take images in the /test/ directory, and we are going to replace those pictures. 
