@@ -6,11 +6,13 @@
 
 *(Teaser image from original [REPO](https://github.com/IGLICT/DeepFaceDrawing-Jittor/))*
 
-___
+------
 
 ### Before we start:
 
 #### This REPO mainly helps with creating the working environment easily using docker. If you are just looking for a quick test-drawing with the application, make sure to check out http://www.geometrylearning.com/DeepFaceDrawing/, where the original author created a web-based [testing interface](http://deepfacedrawing.geometrylearning.com/index_EN_621.html/).
+
+------
 
 ### Model Architecture:
 
@@ -18,12 +20,14 @@ ___
 
 *(Illustrate of network architecture from the [paper](http://www.geometrylearning.com/paper/DeepFaceDrawing.pdf))*
 
-As shown in the architecture above, the model is separated into three parts, which are Component Embedding (CE) Module, Feature Mapping (FM) Module and Image Synthesis (IS) Module. An input of hand sketch face image of size 512 by 512, is first decomposed into five components: “left-eye", “right-eye", “nose", “mouth", and “remainder". The "eye"s, "nose" and "mouth" are separated by taking window size of 128, 168 and 192, while the "remainder" is literally the remainder part of the sketch. The five components are then feature-encoded using a 5 auto-encoders with latent descriptor of 512 dimensions. The feature vectors of components are considered as the point samples of the underlying component manifolds, and are used to refine the hand-drawn sketch by projecting its individual parts to the corresponding component manifolds using K nearest neighbors, as shown in the Manifold Projection part above.
+##### As shown in the architecture above, the model is separated into three parts, which are Component Embedding (CE) Module, Feature Mapping (FM) Module and Image Synthesis (IS) Module. An input of hand sketch face image of size 512 by 512, is first decomposed into five components: “left-eye", “right-eye", “nose", “mouth", and “remainder". The "eye"s, "nose" and "mouth" are separated by taking window size of 128, 168 and 192, while the "remainder" is literally the remainder part of the sketch. The five components are then feature-encoded using a 5 auto-encoders with latent descriptor of 512 dimensions. The feature vectors of components are considered as the point samples of the underlying component manifolds, and are used to refine the hand-drawn sketch by projecting its individual parts to the corresponding component manifolds using K nearest neighbors, as shown in the Manifold Projection part above.
 
-The individual feature vectors of components are projected to manifolds to increase its plausibility. In the FM module, instead of decoding each component vectors back to image then synthesis on the component-level, authors choosed to fuse the vectors sketches into one complete face then generate the complete image, as it helps with a more consistent result in terms of both local details and global styles. Given the combined feature vector maps, the IS module converts them to a realistic face image using a conditional GAN architecture. They also applied a two-stage training method, where in stage 1 only the five individual auto-encoders in CE module were trained using different component sketches. Then in stage 2, the parameters in stage 1 are fixed, and the FM/IS modules work together to generate face images through training GAN. 
+##### The individual feature vectors of components are projected to manifolds to increase its plausibility. In the FM module, instead of decoding each component vectors back to image then synthesis on the component-level, authors choosed to fuse the vectors sketches into one complete face then generate the complete image, as it helps with a more consistent result in terms of both local details and global styles. Given the combined feature vector maps, the IS module converts them to a realistic face image using a conditional GAN architecture. They also applied a two-stage training method, where in stage 1 only the five individual auto-encoders in CE module were trained using different component sketches. Then in stage 2, the parameters in stage 1 are fixed, and the FM/IS modules work together to generate face images through training GAN. 
 
 #### For more detailed model architecture specifics, please refer to the original paper: 
 [Shu-Yu Chen, Wanchao Su, Lin Gao, Shihong Xia, and Hongbo Fu. 2020. DeepFaceDrawing: deep generation of face images from sketches. ACM Trans. Graph. 39, 4, Article 72 (July 2020), 16 pages. DOI:https://doi.org/10.1145/3386569.3392386](http://www.geometrylearning.com/paper/DeepFaceDrawing.pdf)
+
+------
 
 ### Actual Model Performance
 
