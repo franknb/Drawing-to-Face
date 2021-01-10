@@ -6,7 +6,7 @@
 
 *(Teaser image from original [REPO](https://github.com/IGLICT/DeepFaceDrawing-Jittor/))*
 
-------
+___
 
 ### Before we start:
 
