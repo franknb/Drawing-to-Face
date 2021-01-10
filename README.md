@@ -12,7 +12,6 @@
 
 #### This REPO mainly helps with creating a quick working CPU environment easily using docker. If you are just looking for a quick test-drawing with the application, make sure to check out http://www.geometrylearning.com/DeepFaceDrawing/, where the original author created a web-based [testing interface](http://deepfacedrawing.geometrylearning.com/index_EN_621.html/).
 
-------
 
 ## Model Architecture:
 
@@ -27,7 +26,6 @@
 #### For more detailed model architecture specifics, please refer to the original paper: 
 [Shu-Yu Chen, Wanchao Su, Lin Gao, Shihong Xia, and Hongbo Fu. 2020. DeepFaceDrawing: deep generation of face images from sketches. ACM Trans. Graph. 39, 4, Article 72 (July 2020), 16 pages. DOI:https://doi.org/10.1145/3386569.3392386](http://www.geometrylearning.com/paper/DeepFaceDrawing.pdf)
 
-------
 
 ## Getting Started
 
@@ -108,7 +106,6 @@ docker cp test ubuntu_env:/DeepFaceDrawing-Jittor/
 ```
 This should move all your own testing images into the container. Run test_model.py again to see the generated results.
 
-------
 
 ## Actual Model Performance
 
