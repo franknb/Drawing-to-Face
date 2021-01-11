@@ -112,8 +112,19 @@ mkdir /DeepFaceDrawing-Jittor/results
 
 ## Actual Model Performance
 
-![actual image 1](showcase/actualcase1.png)
+![actual image 1](showcase/actualcase1.jpg)
+
+Let's look at the model output above. All the cases are generated with all refinement parameter set at 0.5. 
+
+The first sketch on the left has a little bit of cartoon-ish touch on it, specifically in the bigger eyes, slightly higher eyebrows and weird looking nose. In the generated images, we can see the model struggled to put the eye and eyebrows on, in between abstract and realism. For the hair, face, mouth and ears, the model did an wonderful work in making the results as real as possible. Same goes with the second one from the left, with exaggerated eye/mouth shapes, and the model really strikes on the balance between sketch and reality.
+
+Sketches 3 to 5 from the left are more "realism", with the comparison with first two. We also ended up with better (more realistic) generated images, closing to the quality of the teaser image in the front. However, one can still argue that the differences between male and female are minimal.
 
 ![actual image 2](showcase/actualcase2.jpg)
+
+This model output above, is based on the 5th sketch above, where sex is set at female. We did a full transformation of all refinement parameter set from 0 to 1. As stated in [paper](http://www.geometrylearning.com/paper/DeepFaceDrawing.pdf), 
+> 𝑤𝑏𝑐 = 1 (refinement parameter) means a full use of an input sketch for image synthesis, while by setting 𝑤𝑏𝑐 = 0 we fully trust the data for interpolation. This blending feature is particularly useful for creating faces that are very different from any existing samples or their blending.
+
+We can see that the sketched hairstyle (with bangs) isn't available from existing samples or their blending, but by setting the parameter at 0.5, we are halfway bwtween faithful and realistic, which enables us to get a sketch-like realistic output.
 
 
