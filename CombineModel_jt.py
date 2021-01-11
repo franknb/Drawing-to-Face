@@ -36,12 +36,12 @@ class CombineModel():
                           'eye2':AE_Model(),
                           'nose':AE_Model(),
                           'mouth':AE_Model(),
-                          'bg': AE_Model()}
+                          '': AE_Model()}
             self.part = {'eye1':(108,156,128),
                         'eye2':(255,156,128),
                         'nose':(182,232,160),
                         'mouth':(169,301,192),
-                        'bg':(0,0,512)}
+                        '':(0,0,512)}
             self.opt = wholeOptions().parse(save=False)
             for key in  self.model.keys():
                 # print(key)
@@ -58,7 +58,7 @@ class CombineModel():
                                 'eye2': 1,
                                 'nose': 1,
                                 'mouth': 1,
-                                'bg': 1}
+                                '': 1}
 
         opt1 = CombineOptions().parse(save=False)
         opt1.nThreads = 1  # test code only supports nThreads = 1
@@ -83,9 +83,9 @@ class CombineModel():
                 loc = self.part[key]
                 sketch_part = sketch_mat[loc[1]:loc[1]+loc[2],loc[0]:loc[0]+loc[2],:]
 
-                if key == 'bg' :
+                if key == '' :
                     for key_p in self.model.keys():
-                        if key_p!= 'bg':
+                        if key_p!= '':
                             loc_p = self.part[key_p]
                             sketch_part[loc_p[1]:loc_p[1]+loc_p[2],loc_p[0]:loc_p[0]+loc_p[2],:] = 255
 
@@ -96,9 +96,9 @@ class CombineModel():
 
                 #shadow_ = shadow_[loc[1]:loc[1] + loc[2], loc[0]:loc[0] + loc[2], :]
 
-                if key == 'bg':
+                if key == '':
                     for key_p in self.model.keys():
-                        if key_p != 'bg':
+                        if key_p != '':
                             loc_p = self.part[key_p]
                             shadow_[loc_p[1]:loc_p[1] + loc_p[2], loc_p[0]:loc_p[0] + loc_p[2], :] = 255 - (
                                         255 - shadow_[loc_p[1]:loc_p[1] + loc_p[2], loc_p[0]:loc_p[0] + loc_p[2], :]) * (1 - (
