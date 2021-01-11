@@ -39,5 +39,5 @@ for x,fileName in enumerate(images_path):
     combine_model.part_weight[''] = 0.5
     combine_model.predict_shadow(mat_img)
     # This is where model writes result images
-    cv2.imwrite('./results/' + 'res'+ str(x) +'_male.jpg',cv2.cvtColor(combine_model.generated, cv2.COLOR_BGR2RGB))
+    cv2.imwrite('./results/' + 'res'+ str(x + 1) +'_male.jpg',cv2.cvtColor(combine_model.generated, cv2.COLOR_BGR2RGB))
     jt.gc()
