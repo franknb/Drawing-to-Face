@@ -10,7 +10,9 @@ import jittor as jt
 jt.flags.use_cuda = 0
 
 try:
-    !mv ./heat/bg.jpg ./heat/.jpg
+    os.system ("bash -c 'mv ./heat/bg.jpg ./heat/.jpg'")
+except:
+    pass
 
 #models for face/eye1/eye2/nose/mouth
 combine_model = CombineModel()
