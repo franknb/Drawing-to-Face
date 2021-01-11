@@ -104,8 +104,11 @@ Lastly, open up terminal/CMD again and find the test directory that you created,
 # In your own OS
 docker cp test ubuntu_env:/DeepFaceDrawing-Jittor/        
 ```
-This should move all your own testing images into the container. ***We will need to change the test_model.py since it only supports less than or equal to 5 test images at once due to the pre-set component refinement parameters.*** 
-
+This should move all your own testing images into the container. ***We will need to change the test_model.py since it only supports less than or equal to 5 test images at once due to the pre-set component refinement parameters.*** I recommend to remove the original parameter matrix, and set the parameters yourself. There are in total 6 parameter you can set for one picture generated, for more details please refer to the "Actual Model Performance" part down below. In [example.py](example.py) that I provided in this REPO, I set all refinement parameters to 0.5 and sex to 0 (male), feel free to change at your desire. Also, I put the generated images in a /results/ directory, make sure to add that with a simple line of code to avoid errors.
+```
+# In the running container
+mkdir /DeepFaceDrawing-Jittor/results
+```
 
 ## Actual Model Performance
 
