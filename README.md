@@ -37,9 +37,9 @@
 
 - Disk Space: 5 GB minimum
 
-### 1. Download and install [Docker](https://docs.docker.com/get-docker/) in your operating system.
+### 1. Download and install [Docker](https://docs.docker.com/get-docker/) in your operating system
 
-### 2. Open up your terminal/CMD or any command line interface of your option, 
+### 2. Open up your terminal/CMD or any command line interface of your option
 ```
 # Pull the docker image from Docker Hub
 docker pull frank0124/drawing-to-face
@@ -48,7 +48,7 @@ docker pull frank0124/drawing-to-face
 docker run -it --name ubuntu_env frank0124/drawing-to-face
 ```
 
-### 3. Download pre-trained weights,
+### 3. Download pre-trained weights
 ```
 cd /DeepFaceDrawing-Jittor/Params
 wget https://www.dropbox.com/s/5s5c4zuq6jy0cgc/Combine.zip
@@ -58,7 +58,7 @@ unzip AE_whole.zip && rm AE_whole.zip
 cd /DeepFaceDrawing-Jittor
 ```
 
-### 4. Test run model,
+### 4. Test run model
 ```
 # Before test run using the included test_model.py, we need to change the cuda usage from 1 to 0 due to not setting up GPU
 vim test_model.py
@@ -87,11 +87,11 @@ Then you can simply go to that current directory where you run your terminal/CMD
 
 *(ori0.jpg)*
 
-### 6. Next steps
+## Next Steps
 
 Now you know the model could run on your own environment, it's time to draw and run more tests. We will just use the test_model.py for this part, unless you want to rewrite it yourself if you have a fairly fundamental Python background. The test_model.py will take images in the /test/ directory, and we are going to replace those pictures. 
 
-First, you want to create some 512 by 512 sized sketch jpg files. You can draw it wherever you want, on an Ipad or even on paper then take a picture of it. Then make sure it's of right format or size, I recommend Photoshop for this process for the easy size/output control. Put all the images you want to test in a directory/folder called test. ***Beware that the original test_model.py only supports less than or equal to 5 test images at once.***
+First, you want to create some 512 by 512 sized sketch jpg files. You can draw it wherever you want, on an Ipad or even on paper then take a picture of it. Then make sure it's of right format or size, I recommend Photoshop for this process for the easy size/output control. Put all the images you want to test in a directory/folder called test. 
 
 Now, in side the docker, you want to remove the existing test images to avoid running them again.
 ```
@@ -104,7 +104,7 @@ Lastly, open up terminal/CMD again and find the test directory that you created,
 # In your own OS
 docker cp test ubuntu_env:/DeepFaceDrawing-Jittor/        
 ```
-This should move all your own testing images into the container. Run test_model.py again to see the generated results.
+This should move all your own testing images into the container. ***We will need to change the test_model.py since it only supports less than or equal to 5 test images at once due to the pre-set component refinement parameters.*** 
 
 
 ## Actual Model Performance
